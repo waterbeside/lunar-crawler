@@ -75,7 +75,7 @@ def parse_content(content):
       # 取得节气
       item['solar_term'] =  line_split[3] if len(line_split) > 3  else None
       if item['solar_term'] is not None:
-        res['solar_term_date_list'].append(datetime.datetime.strptime(item['date'], '%Y-%m-%d').strftime('%d'))
+        res['solar_term_date_list'].append(int(datetime.datetime.strptime(item['date'], '%Y-%m-%d').strftime('%d')))
 
       if item['lunar_day'] == 1 or len(res['lunar_month_list']) == 0:
         lunar_month_list_item = {

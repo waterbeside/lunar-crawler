@@ -58,10 +58,11 @@ def check_product(year, std_data = None):
     d = get_term_date(year, i)
     std_month =i // 2 + 1
     std_month = '0{}'.format(std_month) if std_month < 10 else str(std_month)
-    std_date = std_month + '-' + std_data[i]
+    std_date = std_month + '-' + ('0' + str(std_data[i]))[-2:]
     if d.strftime('%m-%d') != std_date:
       res = False
-      err_date.append([d.strftime('%y-%m-%d'), std_date])
+      err_date.append([d.strftime('%Y-%m-%d'), std_date])
+  print()
   return res, err_date
 
 
@@ -79,7 +80,7 @@ def check_all():
 
 if __name__ == '__main__':
 
-  print(check_all())  
+  # print(check_all())  
   print(check_product(1902))
   pass
 
