@@ -6,7 +6,7 @@ import datetime
 from time import strptime
 from dateutil.relativedelta import relativedelta
 
-from const import SOLAR_TREMS
+# from const import SOLAR_TREMS
 # from lib.const import LUN_MON_DICT, LUN_DAY_DICT, WEEK_DAY, SOLAR_TREMS
 
 # root_path = os.path.abspath(__file__)
@@ -62,7 +62,7 @@ def check_product(year, std_data = None):
     if d.strftime('%m-%d') != std_date:
       res = False
       err_date.append([d.strftime('%Y-%m-%d'), std_date])
-  print()
+  # print()
   return res, err_date
 
 

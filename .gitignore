@@ -1,4 +1,5 @@
 data/json
 data/dist
+data/txt
 venv
 __pycache__
